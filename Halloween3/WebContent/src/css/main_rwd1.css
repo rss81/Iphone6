@@ -1,0 +1,591 @@
+/* chapter 4 requirements lines   1-103
+ * chapter 5 requirements lines 130-194
+ * chapter 6 requirements lines 196-236
+ * 
+ * chapter 7 requirements lines 243-412
+ * chapter 8 requirements lines 414-
+ */
+
+
+/* Set the default font for the document to a sans-serif font.
+ * NOTE:  this is already done in the normalize.cc file but we 
+ * repeat here for completemness
+ */
+#container{
+	
+	
+}
+#mobile_menu{display:none;}
+html {
+  font-family: sans-serif; 
+  overflow-y:scroll; 
+}
+
+/* Adjust the font sizes for all of the headings. 
+ * NOTE: we increase all of them 5% from their defaults
+ */
+ 
+p{
+	font-size:115%;
+	line-height: 100%;
+}
+
+h1 {
+	font-size: 170%;
+}
+h2 {
+	font-size: 157.5%;
+}
+h3 {
+	font-size: 122.85%;
+}
+h4{
+	font-size: 105%;
+}
+h5 {
+	font-size: 87.15%;
+}
+h6 {
+	font-size: 70.35%;
+}
+
+
+/* format the first letter of the first heading in the main   
+ * content so it’s larger than the other letters in the heading.  
+ */ 
+ 
+ h1:first-child::first-letter {
+	font-size: 150%;
+	font-style: normal;
+	padding-right: .1875em;
+}
+
+/* In the header, float the image to the left and 
+ * indent both headings.
+ */
+
+header {
+	height: 7em;
+}
+
+
+
+header img{
+	display:block;
+	float:left;
+	margin-top:.75em;
+	width:10%;
+	min-width:40px;
+	max-width:85px;
+	padding-left: .6875em;
+}
+header h2{
+	float:left;
+	width:80%;
+	display:block;
+	font-size:250%;
+	text-indent: 1em;
+	margin: 0%;
+	padding-top: 0.5em; 
+    line-height: 100%;
+	
+   
+}
+
+ h2{
+	margin: 0% ;
+}
+
+header h3{
+	float:left;
+	display:block;
+	width:80%;
+	font-size:150%;
+	margin: 0%;
+	text-indent: 2.0em;
+	line-height:100%;
+	
+}
+
+
+ /* In addition, change the color of the first heading to orange, 
+  * italicize it, 
+  * and add a black shadow.
+  */
+ 
+ header h2 {
+ 	/*color: orange;
+ 	font-style: italic;*/
+ 	
+ 	text-shadow: .125em .125em .25em black;
+ }
+ 
+ /* Format the links so they’re displayed in boldfaced orange whether 
+  * or not they’ve been visited. 
+  * If a link has the focus or the mouse is hovering over it, though, it 
+  * should be displayed in green.
+  */
+
+ [href]:link,  [href]:visited{
+	font-weight: bold;
+	color: orange;
+}
+
+ [href]:focus,  [href]:hover{
+	color:green;
+}
+
+/* Format the list to increase the space between the list items.
+ */
+
+
+/* Reduce the font size for the footer and center it. 
+ */
+
+footer {	
+	clear:both;
+	height:5em;
+	text-align: center;		
+}
+
+footer p {
+	font-size:90%;
+	height: 1em;
+	margin-top: 2em;
+	
+} 
+
+/* chapter 5 requirements */
+
+/* Format the body of the page so it’s 800 pixels wide, 
+ * has a white background, has a black border with a shadow, 
+ * and is centered in the browser window.
+ */
+
+body {
+	width: 95%;
+	height: 95%;
+	max-width: 960px;
+	background-color: white;
+	border: 4px solid black;
+	box-shadow: .125em .25em 1.25em .3125em black; 
+	margin: 0 auto;
+} 
+
+/* Add a background image behind the body of the page that uses 
+ * the bats.gif file in the images folder. This image should repeat 
+ * both horizontally and vertically.
+ */
+
+html{
+	background-image: url("../img/bats.gif");
+	background-repeat:repeat;
+}
+
+/* Add a black border below the header and above the footer. */
+
+header {
+	border-bottom: .125em solid black;
+}
+footer {
+	border-top: .125em solid black;	
+}
+
+/* Remove the shadow, italics, and color from the first heading in the header. */
+  
+ header h2 {
+ 	color: black;
+ 	font-style:normal; 		
+ 	text-shadow: none;
+ }
+ 
+ /* Add a 45-degree gradient to the header and footer. 
+  * The gradient in the header should range from white at the left to orange 
+  * ¾ of the way to the right to black at the right. 
+  * The gradient in the footer should be the reverse. 
+  * Be sure to provide for all modern browsers.
+  * NOTE: checked in chrome, firefox and IE
+  */
+ 
+header {
+	background: linear-gradient(45deg,white 0%, orange 75%, black 100%)	;
+}
+
+footer{
+	background: linear-gradient(45deg,black 0%, orange 25%, white 100%)	;
+	
+}
+
+/* Adjust the margins and padding for the elements */
+
+
+
+
+/* chapter 6 requirements */
+
+/* Move the unordered list to a sidebar that’s floated to the left of the remaining content, 
+ * which should be coded in a section. The width of the sidebar should be 160 pixels. 
+ * Be sure to clear the footer so it’s not displayed below the list.
+ */
+
+nav {
+	float:left;
+	width: 20%;
+}
+
+
+footer{
+	clear:both;
+}
+
+/* Adjust the margins and padding for the sidebar and section as necessary. 
+ *(Note: Because the unordered list is given some left padding by default, 
+ * you don’t need to apply any additional margin or padding to it.)
+ */
+
+
+/* Modify the HTML for the first heading in the section so it’s displayed on two lines
+ * NOTE:  added <br> to halloween.html to break line
+ */
+
+/* Modify the second heading as shown. Then, add the image (cat1.jpg) 
+ * and the link below the heading. The link should display a page named cat.html 
+ * in the products folder.
+ * NOTE:  we added the following to halloween.html
+ * 
+ *                  <h2>Product of the week</h2>
+ *					<img src="img/cat1.jpg" alt="a deranged cat" />					
+ *					<p><a href="products/cat.html">20&quot; Deranged Cat</a></p>
+ * 
+ * and we added the cat.html page to products folder
+ */
+
+ 
+/* Chapter 7 requirements */
+
+/* Add a 2-tier navigation menu that includes the links shown above. 
+ * Format the navigation menu so the link for the page that’s currently displayed 
+ * (in this case, home) has orange text, and so the link that the mouse is hovering over 
+ * (in this case, indoor) has a gray background.
+ */
+
+
+#nav_lat{
+	width:100%;
+	height: 3em;
+}
+
+#nav_lat ul {
+	list-style: none;
+	position: relative; 
+	padding:0%;
+	width:100%;	
+	margin: 0%;
+	height:3em;
+	
+}
+
+#nav_lat ul li {
+	float:left;	
+	width:20%;
+	
+	margin:0%;
+	height:3em;
+	
+}
+
+#nav_lat ul ul{
+	display:none;
+	position:absolute;	
+	top:100%;
+}
+
+#nav_lat a {
+	
+	height:1em;
+	padding: 1em 0;
+	
+	width:100%;
+	display:block;
+	text-decoration: none;
+	color: white; 
+	background-color: black;
+	
+	
+	
+	
+}
+
+#nav_lat #a1{
+	text-indent: 2.8125em;
+	color:orange;
+}
+
+#nav_lat #a2{
+	text-indent:  .625em;
+}
+#nav_lat #a3{
+	text-indent:  1.875em;
+}
+#nav_lat #a4{
+	text-indent:  .3125em;
+}
+#nav_lat #a5{
+	text-indent:  1.875em;
+}
+
+#nav_lat ul ul li {
+	float:none;
+	text-align:center;
+	margin:0%;
+	
+}
+
+#nav_lat ul li:hover > a{	
+	background-color: #333333;
+}
+
+#nav_lat ul li ul li:hover > a{	
+	background-color: gray;
+}
+
+
+#nav_lat ul li:hover > ul {
+	display:block;	
+/*	background-color: gray; */
+}
+#nav_lat ul li ul a  {
+	
+	padding-top:1em;
+	
+}
+
+
+
+#nav_lat >ul::after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+
+
+/* Format the links in the sidebar as a vertical navigation menu as shown above. 
+ * Be sure to make the entire box for each link clickable.
+ */
+
+
+
+section a{
+	display:block;
+}
+
+#img {
+	margin:0%;
+	width:20%;
+	max-width:154px;
+	min-width:60px;
+}
+
+h1{
+	margin-top:5%;
+	line-height: 125%;
+}
+
+#nav_long{
+	display:block;
+	
+	width:20%;
+	margin-top: 3%;
+}
+
+#nav_long ul{
+	list-style-type: none;
+	padding-left:10%;
+	
+	margin-bottom: 5%;
+	margin-top:2%;
+	width:70%;
+	
+	
+	
+	}
+	
+#nav_long ul li{
+	
+	
+	text-indent: .375em;
+	margin-bottom: 5%;
+	border: .125em solid black;
+}
+
+#nav_long a {
+	display:block;
+	text-decoration: none;
+	color: black;
+	background-color: orange;
+}
+
+#nav_long ul li:hover > a{	
+	background-color: #e59400;
+}
+
+ section{
+ 	display:block;
+	float:right;
+	margin:0 auto;
+	padding:0% 0%;
+	padding-right:5%;
+	width:70%;
+	
+}
+
+ section p{
+	margin:0 auto;
+	margin-bottom: 1em;
+}
+
+/* Modify the image in the main content so it’s a link that displays the 
+ * same page as the link below it.  
+ * NOTE:  Changed the HTML file Halloween.html as follows:
+ * 
+ *        <img src="img/cat1.jpg" alt="a deranged cat" />
+ *                         changed to					 
+ *        <p><a href="products/cat.html"><img src="img/cat1.jpg" alt="a deranged cat"></a></p>
+ */
+
+/* chapter 8 requirements */
+
+/*  Make a copy of the main.css style sheet and name it main_rwd.css. 
+ *  Then, modify the HTML for the page so it uses this style sheet.
+ *  NOTE: this file
+ */
+
+ /*  Modify the page so it uses a fluid layout. The maximum width for the page should be 960 pixels, 
+  * and the page should occupy 95% of the browser window. Be sure to make the left and right margins 
+  * and padding as well as the structural elements fluid. (Note: To get the boxes in the vertical 
+  * navigation menu to size properly, you’ll need to specify the width on the ul element instead of 
+  * the li elements.)
+  * NOTE: extenive changes made above. MOST px references changed to em or %
+  */
+ 
+ body {
+ 	
+ 	width: 95%;
+ 	max-width: 960px;
+ 	min-width:   0px;
+ 	margin: 0 auto;
+ }
+ 
+ 
+ 
+ 
+ /*  If you used pixels for any top or bottom margins or padding, convert them to ems. In addition, 
+  * if you specified any of the font sizes using pixels, convert them to percentages or ems.
+  */
+ 
+ /*   NOTE: extensive changes made above    */
+
+  /* Make both of the images on the page scalable, and make sure that both images are limited in size 
+   * to the width that’s specified in the HTML. In addition, make sure that the image in the header can’t 
+   * be reduced to a width less than 40 pixels.
+   */
+  
+  /*    NOTE: changes made above    */
+ 
+ 
+ /*   chapter 8 media queries  */
+
+/* Add a meta element to the page to control the viewport for media queries.
+ * Add a media query that will be applied to screens with a maximum width of 800 pixels. 
+ * Then, add styles to remove the background image from the page, remove the shadow from the body, 
+ * and reduce the size of all the fonts on the page to 90%.
+ */
+
+@media only screen and (max-width:800px){
+	html {background-image:none;
+	}
+	
+	body {	
+	box-shadow: none; 
+	font-size:90%;
+    } 
+}
+
+/* Add a media query that will be applied to screens with a maximum width of 767 pixels. 
+ * Then, add the HTML and CSS required to hide the navigation menu and display a SlivkNav 
+ * menu in its place. You’ll find the slicknav.css file in the styles folder, you’ll find 
+ * the slicknav.min.js file in the js folder, and you can get the jQuery library from the 
+ * jQuery Content Delivery Network. Format the page so it appears in one column.
+ */
+
+@media only screen and (max-width:767px){
+	html {background-color:white;
+	}
+	
+	header{
+		font-size:90%;}
+	#nav_lat{display:none;}
+	#mobile_menu{display:block;
+	             width:30%; 
+	             min-width:216px;  
+	             }
+	
+	.slicknav_btn {
+		float:left !important;
+	}
+	
+	nav.slicknav_nav, nav.slicknav_nav ul{
+		width:75%;
+	}
+#mobile_menu a{
+		color:white;
+                background-color:orange;
+	}
+	
+	#mobile_menu a:hover{
+		background-color:orange;
+	}
+	
+	body{
+		width:100%;
+		margin:0 auto;
+		border:none;
+	}
+	
+	 section{
+		clear:both;
+		width:90%;
+		
+	}
+	#nav_long{
+		width:100%;
+		clear:both;
+		
+	}
+	#nav_long ul{
+		margin:0 auto;
+		width:25%;
+		
+		padding:0;
+	}
+	
+	#nav_long ul li a{
+		padding-top: .5em ;
+		height:1.75em;
+		text-align:center;
+	}
+	
+}
+
+@media only screen and (max-width:479px){
+	header{
+		font-size:70%;
+	}
+	
+	h1{
+		font-size: 140%;}
+	
+	body{min-width:355px;}
+ 
+

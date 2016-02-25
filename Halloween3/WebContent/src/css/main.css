@@ -1,0 +1,412 @@
+/* chapter 4 requirements lines   1-103
+ * chapter 5 requirements lines 130-194
+ * chapter 6 requirements lines 196-236
+ * 
+ * chapter 7 requirements lines 243-412
+ */
+
+
+/* Set the default font for the document to a sans-serif font.
+ * NOTE:  this is already done in the normalize.cc file but we 
+ * repeat here for completemness
+ */
+html {
+  font-family: sans-serif;
+}
+
+/* Adjust the font sizes for all of the headings. 
+ * NOTE: we increase all of them 5% from their defaults
+ */
+ 
+p{
+	font-size:18.35px;
+	line-height: 100%;
+}
+
+h1 {
+	font-size: 170%;
+}
+h2 {
+	font-size: 157.5%;
+}
+h3 {
+	font-size: 122.85%;
+}
+h4{
+	font-size: 105%;
+}
+h5 {
+	font-size: 87.15%;
+}
+h6 {
+	font-size: 70.35%;
+}
+
+
+/* format the first letter of the first heading in the main   
+ * content so it’s larger than the other letters in the heading.  
+ */ 
+ 
+main h1:first-child::first-letter {
+	font-size: 150%;
+	font-style: normal;
+	padding-right: 3px;
+}
+
+/* In the header, float the image to the left and 
+ * indent both headings.
+ */
+
+header img{
+	float:left;
+	margin-top: 10px;
+}
+header h2{
+	text-indent: 25px;
+	margin-top: 0px;
+	padding-top: 5px;
+	margin-bottom: 0px;
+    height: 50px;
+}
+
+main h2{
+	margin: 0px 0px;
+}
+
+header h3{
+	margin-top: 0px;
+	text-indent: 25px;
+}
+
+
+ /* In addition, change the color of the first heading to orange, 
+  * italicize it, 
+  * and add a black shadow.
+  */
+ 
+ header h2 {
+ 	color: orange;
+ 	font-style: italic;
+ 	font-size: 250%; 	
+ 	text-shadow: 2px 2px 4px black;
+ }
+ 
+ /* Format the links so they’re displayed in boldfaced orange whether 
+  * or not they’ve been visited. 
+  * If a link has the focus or the mouse is hovering over it, though, it 
+  * should be displayed in green.
+  */
+
+ [href]:link,  [href]:visited{
+	font-weight: bold;
+	color: orange;
+}
+
+ [href]:focus,  [href]:hover{
+	color:green;
+}
+
+/* Format the list to increase the space between the list items.
+ */
+
+li {
+	margin-bottom: 2px;
+}
+
+/* Reduce the font size for the footer and center it. 
+ */
+
+footer {	
+	clear:both;
+	height: 50px;
+	text-align: center;		
+}
+
+footer p {
+	font-size: 90%;
+	height: 15px;
+	margin: 17.5px 0;
+	
+} 
+
+/* chapter 5 requirements */
+
+/* Format the body of the page so it’s 800 pixels wide, 
+ * has a white background, has a black border with a shadow, 
+ * and is centered in the browser window.
+ */
+
+body {
+	width: 800px;
+	background-color: white;
+	border: 4px solid black;
+	box-shadow: 2px 4px 20px 5px black;
+	margin: 0 auto;
+} 
+
+/* Add a background image behind the body of the page that uses 
+ * the bats.gif file in the images folder. This image should repeat 
+ * both horizontally and vertically.
+ */
+
+html{
+	background-image: url("../img/bats.gif");
+	background-repeat:repeat;
+}
+
+/* Add a black border below the header and above the footer. */
+
+header {
+	border-bottom: 2px solid black;
+}
+
+footer {
+	border-top: 2px solid black;	
+}
+
+/* Remove the shadow, italics, and color from the first heading in the header. */
+  
+ header h2 {
+ 	color: black;
+ 	font-style:normal; 		
+ 	text-shadow: none;
+ }
+ 
+ /* Add a 45-degree gradient to the header and footer. 
+  * The gradient in the header should range from white at the left to orange 
+  * ¾ of the way to the right to black at the right. 
+  * The gradient in the footer should be the reverse. 
+  * Be sure to provide for all modern browsers.
+  * NOTE: checked in chrome, firefox and IE
+  */
+ 
+header {
+	background: linear-gradient(45deg,white 0%, orange 75%, black 100%)	;
+}
+
+footer{
+	background: linear-gradient(45deg,black 0%, orange 25%, white 100%)	;
+	
+}
+
+/* Adjust the margins and padding for the elements */
+
+main {
+	margin: 0 50px 0 3px;
+}
+
+
+/* chapter 6 requirements */
+
+/* Move the unordered list to a sidebar that’s floated to the left of the remaining content, 
+ * which should be coded in a section. The width of the sidebar should be 160 pixels. 
+ * Be sure to clear the footer so it’s not displayed below the list.
+ */
+
+nav {
+	float:left;
+	width: 160px;
+}
+
+
+footer{
+	clear:both;
+}
+
+/* Adjust the margins and padding for the sidebar and section as necessary. 
+ *(Note: Because the unordered list is given some left padding by default, 
+ * you don’t need to apply any additional margin or padding to it.)
+ */
+section{
+	
+	margin-left:160px;
+	padding-left: 10px;
+}
+
+/* Modify the HTML for the first heading in the section so it’s displayed on two lines
+ * NOTE:  added <br> to halloween.html to break line
+ */
+
+/* Modify the second heading as shown. Then, add the image (cat1.jpg) 
+ * and the link below the heading. The link should display a page named cat.html 
+ * in the products folder.
+ * NOTE:  we added the following to halloween.html
+ * 
+ *                  <h2>Product of the week</h2>
+ *					<img src="img/cat1.jpg" alt="a deranged cat" />					
+ *					<p><a href="products/cat.html">20&quot; Deranged Cat</a></p>
+ * 
+ * and we added the cat.html page to products folder
+ */
+
+ 
+/* Chapter 7 requirements */
+
+/* Add a 2-tier navigation menu that includes the links shown above. 
+ * Format the navigation menu so the link for the page that’s currently displayed 
+ * (in this case, home) has orange text, and so the link that the mouse is hovering over 
+ * (in this case, indoor) has a gray background.
+ */
+
+
+#nav_lat{
+	width:800px;
+}
+
+#nav_lat ul {
+	list-style: none;
+	position: relative; 
+	padding:0px;
+	width:800px;
+	height:55px;
+	margin: 0px;
+	
+}
+
+#nav_lat ul li {
+	float:left;	
+	width:160px;
+	padding:0px;
+	margin:0px;
+	height:55px;
+}
+
+#nav_lat ul ul{
+	display:none;
+	position:absolute;
+	width:160px;
+	top:100%;
+}
+
+#nav_lat a {
+	width:160px;
+	display:block;
+	text-decoration: none;
+	color: white; 
+	background-color: black;
+	height:40px;
+	padding-top:15px;
+	
+	
+}
+
+#nav_lat #a1{
+	text-indent: 45px;
+	color:orange;
+}
+
+#nav_lat #a2{
+	text-indent:  10px;
+}
+#nav_lat #a3{
+	text-indent:  30px;
+}
+#nav_lat #a4{
+	text-indent:  5px;
+}
+#nav_lat #a5{
+	text-indent:  30px;
+}
+
+#nav_lat ul ul li {
+	float:none;
+	text-align:center;
+	margin:0px;
+	
+}
+#nav_lat  li:hover > a{
+	
+	background-color: #333333;
+}
+
+#nav_lat ul li:hover >ul {
+	display:block;
+	background-color: gray;
+}
+#nav_lat ul li ul a  {
+	
+	padding-top:15px;
+	height:40px;
+}
+
+#nav_lat ul li ul a:hover  {
+	
+	background-color: gray;
+	
+}
+/*
+#nav_lat >ul::after{
+	content:"";
+	display:block;
+	clear:both;
+}
+*/
+/* Format the links in the sidebar as a vertical navigation menu as shown above. 
+ * Be sure to make the entire box for each link clickable.
+ */
+
+main{
+	margin:0px;
+}
+
+#img {
+	margin:5px 0px;
+}
+
+h1{
+	margin-top:25px;
+	line-height: 1.25em;
+}
+
+#nav_long{
+	float:left;
+	width:115px;
+	margin-top:20px;
+}
+
+#nav_long ul{
+	list-style-type: none;
+	padding-left: 15px;
+	margin-left:0em;
+	margin-bottom: 1.5em;
+	margin-top:5px;
+	width:100px;
+	
+	}
+	
+#nav_long ul li{
+	width: 90px;
+	margin-left: 6px;
+	text-indent: 6px;
+	margin-bottom: .5em;
+	border: 2px solid black;
+}
+
+#nav_long a {
+	display:block;
+	text-decoration: none;
+	color: black;
+	background-color: orange;
+}
+
+#nav_long ul li:hover > a{
+	
+	background-color: #e59400;
+}
+
+main section{
+	float:left;
+	margin-left:0px;
+	padding-left:40px;
+	width:600px;
+	margin-right:45px;
+}
+
+/* Modify the image in the main content so it’s a link that displays the 
+ * same page as the link below it.  
+ * NOTE:  Changed the HTML file Halloween.html as follows:
+ * 
+ *        <img src="img/cat1.jpg" alt="a deranged cat" />
+ *                         changed to					 
+ *        <p><a href="products/cat.html"><img src="img/cat1.jpg" alt="a deranged cat"></a></p>
+ */
